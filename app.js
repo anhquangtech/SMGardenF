@@ -1,5 +1,10 @@
 var express = require("express");
 var app = express();
+
+// Router
+var indexRouter = require('./routes/index');
+
+app.use('/',indexRouter);
 app.use(express.static("./public"));
 app.set("view engine","ejs");
 app.set("views","./views");
@@ -9,7 +14,6 @@ var ip = require('ip');
 const PORT = 3000;
 server.listen(PORT);
 console.log("Server nodejs chay tai dia chi: " + ip.address() + ":" + PORT);
-
 
 //Khi có mệt kết nối được tạo giữa Socket Client và Socket Server
 io.on('connection', function(socket) {	
@@ -47,6 +51,4 @@ io.on('connection', function(socket) {
     // socket.emit("Server-send-data",{ hello: 'world' });
 });
 
-app.get("/",function(req,res){
-    res.render("controlByHand");
-})
+module.exports = app;

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<title> Example </title>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="images/profile.png"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">  
+	<script type="text/javascript" src="./stylesheets/vendor/bootstrap.js"></script>
+	<link rel="stylesheet" href="./stylesheets/vendor/bootstrap.css">
+	<!-- <link rel="stylesheet" href="vendor/fontawesome.css"> -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+ 	<link rel="stylesheet" href="./stylesheets/css/1.css">
+</head>
+<body data-spy="scroll" data-target=".menu" data-offset="50">
+    <div class="menu navbar-inverse navbar-fixed-top">
+    	<div class="container">
+    		<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					 <span class="sr-only">Toggle navigation</span>
+					 <span class="icon-bar"></span>
+					 <span class="icon-bar"></span>
+					 <span class="icon-bar"></span>
+				</button>
+			<a href=""><img src="images/logo.png" alt=""></a>
+			</div>
+			
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    			<ul class="nav navbar-nav navbar-right">
+    				<li><a href="#home">HOME</a></li>
+    				<li><a href="#portfolio">PORTFOLIO</a></li>
+    				<li><a href="#about">ABOUT</a></li>
+    				<li><a href="#contact">CONTACT</a></li>
+					<li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-circle"></i> <span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			            <li><a href="#"><i class="fas fa-user"></i>	Profile</a></li>
+			            <li><a href="#"><i class="fas fa-cog"></i>	Setting</a></li>
+			            <li role="separator" class="divider"></li>
+			            <li><a href="./cropSelection"><i class="fas fa-sign-in-alt"></i>	Sign out</a></li>
+			          </ul>
+			        </li>
+			        <li><a type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalLogin">Sign up</a></li>
+    			</ul>
+    		</div>
+    	</div>
+    </div>
+    <!-- end menu -->
+	
+	<!-- Modal Login-->
+	<div class="modalLogin modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+	    	<div class="modal-content">
+	      		<div class="modal-body">
+  					<div class="container-fluid">
+		    			<div class="row1">
+		    				<div class="col-md-6"></div>
+		    				<div class="col-md-6">
+		    					<h3>Member login</h3>
+		    				</div>
+		    			</div>
+		    			<div class="row2">
+		    				<div class="col-md-5">
+		    					<img src="images/profile.png" alt="" height="80%" width="80%">
+		    				</div>
+		    				<div class="col-md-7">
+		    					<form>
+						          <div class="form-group">
+						          	<div class="input-group input-group-lg">
+							          	<span class="input-group-addon"><i class="fas fa-envelope"></i></span>
+							            <input type="text" class="form-control" id="recipient-name" placeholder="Email">
+						          	</div>
+						          </div>
+						          <div class="form-group">
+							          <div class="input-group input-group-lg">
+							          	<span class="input-group-addon"><i class="fas fa-unlock-alt"></i></span>
+							            <input type="Password" class="form-control" id="message-text" placeholder="Password"></input>
+						        	  </div>
+						          </div>
+						        </form>
+						        <div class="btn-primary btn-block text-center">LOGIN</div>
+						        <div class="text-center">
+						        	<a href="">Forgot user name | </a><a href="">Password</a>
+						        	<br><br>
+						        	<p>Copyright <i class="far fa-copyright"></i> Smart Garden 2018</p>
+						        </div>
+		    				</div>
+		    			</div>
+			 		</div>
+				</div>
+	    	</div>
+	  	</div>
+	</div>
+	<!-- end modal -->
+
+    <div class="home" id="home">
+    	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		  	<ol class="carousel-indicators">
+			    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			    <li data-target="#myCarousel" data-slide-to="1"></li>
+			    <li data-target="#myCarousel" data-slide-to="2"></li>
+		 	</ol>
+		  	<div class="carousel-inner">
+			    <div class="item active">
+			    	<img src="images/vegetable.jpg" alt="">
+			    </div>
+
+			    <div class="item">
+			      	<img src="images/vegetable1.jpg" alt="">
+			    </div>
+
+			    <div class="item">
+					  <img src="images/vegetable2.jpg" alt="">
+				</div>
+			</div>
+			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="#myCarousel" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+				<span class="sr-only">Next</span>
+			</a>
+			<div class="getStarted">
+				<div class="col-md-8">
+					<h1 class="choose">Choose Your Diet</h1>
+					<p>I can help you make your life healthier and your body stronger in on time</p>
+					<br><br>
+					<a  href="./cropSelection" ><div class="btn btn-default">Get started</div></a>
+				</div>
+			</div>
+		</div>
+    </div>
+    <!-- end home -->
+	<div class="portfolio" id="portfolio">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<h1>portfolio</h1>
+					<p>Bacon ipsum dolor amet kielbasa jowl shoulder leberkas burgdoggen capicola</p>
+				</div>
+				<div class="row">
+					<div class="col-md-4 text-center">
+						<a href="" data-toggle="modal" data-target="#modalPortfolio1"><img src="images/vegetable4.jpg" alt="" class="img-responsive"></a>
+						<p>Street workout <i class="fas fa-camera-retro"></i> September, 12, 2018</p>
+					</div>
+					<div class="col-md-4 text-center">
+							<a href="" data-toggle="modal" data-target="#modalPortfolio2"><img src="images/vegetable5.jpg" alt="" class="img-responsive"></a>
+						<p>Street workout <i class="fas fa-camera-retro"></i> September, 12, 2018</p>
+					</div>
+					<div class="col-md-4 text-center">
+							<a href="" data-toggle="modal" data-target="#modalPortfolio3"><img src="images/vegetable6.jpg" alt="" class="img-responsive"></a>
+						<p>Street workout <i class="fas fa-camera-retro"></i> September, 12, 2018</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal of portfolio -->
+	<div class="modalPortfolio1 modal fade" id="modalPortfolio1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+	    	<div class="modal-content">
+	      		<div class="modal-body">
+  					<div class="container-fluid">
+		    			<div class="row1">
+							<div class="col-md-12">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true"><i class="far fa-times-circle"></i></span>
+								</button>
+							</div>
+						</div>
+						<div class="row2">
+							<div class="col-md-12">
+								<h1 class="text-center">Huong dan trong rau cai</h1>
+								<div class="row opening">
+									<div class="col-md-8 col-md-push-2">
+										<p>Xu hướng không tự sinh ra cũng không tự mất đi, chúng âm thầm phát triển như một phản ứng với thị hiếu và nhu cầu liên tục thay đổi của người dùng.</p>
+									</div>
+								</div>
+								<img src="images/vegetable4.jpg" alt="" class="img-responsive">
+								<div class="row content">
+									<div class="col-md-8 col-md-push-2">
+										<p>Xu hướng không tự sinh ra cũng không tự mất đi, chúng âm thầm phát triển như một phản ứng với thị hiếu và nhu cầu liên tục thay đổi của người dùng.
+										Trong năm 2016, thiết kế kỹ thuật số nhiệt liệt chào đón các yếu tố mang tính thực tế cao như thiết kế phẳng, thiết kế stackable (xếp chồng) và responsive (đáp ứng), thiết kế thân thiện với mobile. Năm 2017 lại là năm đầy bùng nổ của những yếu tố sinh động kết hợp cùng màu sắc và hình dạng vui tươi. Ảnh hưởng bởi làn sóng tâm lý,  khi việc nhận thức về bản thân được đề cao, các xu hướng chủ đạo năm 2018 nổi bật với sự tương phản thẩm mỹ táo bạo, phản ánh sự khác biệt không ngừng giữa kỹ thuật số và analog.
+															
+										Xu hướng thiết kế năm 2019 - lại một lần nữa - sẽ để lại dấu ấn như cách những người anh em của mình đã làm. Dưới đây là 8 xu hướng chắc chắn sẽ làm mưa làm gió trong năm nay, cùng khám phá nhé!
+										Bacon ipsum dolor amet pork jerky landjaeger pork loin sirloin porchetta strip steak beef ribs. Cow jerky bresaola, bacon turkey pork belly corned beef. Jerky pork belly sausage, boudin corned beef doner spare ribs picanha tongue kevin cow beef ribs swine. Alcatra boudin ham shank prosciutto drumstick brisket ribeye ground round pork loin.
+					
+										Chuck corned beef salami beef ribs shankle, kielbasa filet mignon ball tip meatball short loin. Shoulder buffalo sausage tail hamburger cupim tongue meatloaf. Pork belly landjaeger shank cow venison filet mignon drumstick leberkas frankfurter spare ribs. Landjaeger kevin corned beef, tail venison capicola pork chop jerky frankfurter bresaola short ribs prosciutto leberkas. Picanha porchetta prosciutto ham hock shoulder chicken andouille pig drumstick tail strip steak.
+					
+										Pork chop tongue burgdoggen jerky shoulder pork belly salami bresaola. Spare ribs bresaola kielbasa tongue swine, short ribs jowl meatball brisket cupim andouille. Prosciutto beef ribs tail buffalo, tri-tip boudin capicola doner. Kevin ground round meatball tri-tip. Hamburger jowl sirloin cupim beef kielbasa pork chop meatloaf bacon biltong buffalo.
+					
+										Rump strip steak jerky, leberkas landjaeger beef pastrami bresaola. Tri-tip corned beef bacon, t-bone rump filet mignon kielbasa strip steak spare ribs cupim brisket. Shoulder fatback rump alcatra ham. Salami beef ribs filet mignon cupim pastrami kielbasa meatball pork belly jerky tail short ribs buffalo pork chop turducken strip steak. Leberkas tail fatback pancetta meatloaf burgdoggen doner picanha t-bone capicola ball tip pig andouille ham. Buffalo pork jerky frankfurter ham filet mignon.
+				
+										Pig chuck fatback pork, flank sirloin shankle drumstick turkey bacon beef. Bacon filet mignon hamburger, shoulder pork chop tri-tip t-bone. Ground round tri-tip cupim, bresaola chuck tenderloin ribeye andouille filet mignon tongue. Chicken fatback shoulder ribeye porchetta short ribs prosciutto. Sausage tongue beef meatloaf tenderloin. Pork loin beef prosciutto burgdoggen short loin.
+					
+										Brisket prosciutto burgdoggen sirloin pork belly hamburger picanha boudin pork loin. Fatback rump tenderloin frankfurter biltong, boudin meatball beef short loin. Shank ham hock shankle tenderloin. Ham turducken salami, landjaeger ball tip meatball burgdoggen shank frankfurter ribeye brisket. Pastrami brisket ham flank. Andouille spare ribs landjaeger corned beef, kevin doner jerky chicken tri-tip tongue jowl bacon beef shank kielbasa. Ham beef sirloin short ribs short loin meatloaf capicola pork chop bresaola shankle doner rump jerky.
+					
+										Salami venison strip steak pancetta pork loin pastrami, shank ground round pork belly prosciutto spare ribs capicola. Pastrami short loin spare ribs prosciutto porchetta chicken. Pastrami pork chop chuck hamburger sausage. Tongue shankle short ribs biltong ball tip.
+					
+										Ribeye andouille boudin pork chop. Shoulder tri-tip pancetta pork kevin corned beef jerky capicola ham bacon beef ribs beef boudin. Ribeye brisket ham hock beef cupim strip steak ham shoulder. Kielbasa salami strip steak tongue ham hock doner leberkas biltong meatball landjaeger meatloaf drumstick beef ribs.
+					
+										Ground round pastrami meatloaf pig, ham hock shoulder fatback ham strip steak bresaola turkey sausage. Porchetta cow shankle pork loin landjaeger jerky drumstick spare ribs prosciutto swine leberkas ground round. Corned beef pork loin andouille pork belly alcatra cow ribeye bresaola t-bone cupim porchetta. Venison ball tip beef ribs, kevin meatloaf shank chuck swine strip steak sausage shoulder spare ribs burgdoggen bresaola. Picanha leberkas turducken shank jerky pig cow. Short loin sirloin corned beef pork loin bresaola swine tri-tip ham pork belly. Short loin ham hock flank jerky shank doner spare ribs.
+					
+										Strip steak brisket biltong porchetta meatloaf short loin. Leberkas porchetta cow rump flank, venison salami. Biltong cupim ham short loin porchetta, fatback kielbasa swine ham hock pork belly strip steak pastrami sausage. Pork belly pancetta tri-tip ham hock.
+					
+										Does your lorem ipsum text long for something a little meatier? Give our generator a try… it’s tasty!
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row3">
+							<div class="col-md-12 text-center">
+								<div type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">
+									CLOSE
+								</div>
+							</div>
+						</div>
+			 		</div>
+				</div>
+	    	</div>
+	  	</div>
+	</div>
+	<!-- end modalPortfolio1 -->
+
+	<div class="modalPortfolio2 modal fade" id="modalPortfolio2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+				<div class="modal-content">
+					  <div class="modal-body">
+						  <div class="container-fluid">
+							<div class="row1">
+								<div class="col-md-12">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true"><i class="far fa-times-circle"></i></span>
+									</button>
+								</div>
+							</div>
+							<div class="row2">
+								<div class="col-md-12">
+									<h1 class="text-center">Huong dan trong rau cai</h1>
+									<div class="row opening">
+										<div class="col-md-8 col-md-push-2">
+											<p>Xu hướng không tự sinh ra cũng không tự mất đi, chúng âm thầm phát triển như một phản ứng với thị hiếu và nhu cầu liên tục thay đổi của người dùng.</p>
+										</div>
+									</div>
+									<img src="images/vegetable5.jpg" alt="" class="img-responsive">
+									<div class="row content">
+										<div class="col-md-8 col-md-push-2">
+											<p>Xu hướng không tự sinh ra cũng không tự mất đi, chúng âm thầm phát triển như một phản ứng với thị hiếu và nhu cầu liên tục thay đổi của người dùng.
+											Trong năm 2016, thiết kế kỹ thuật số nhiệt liệt chào đón các yếu tố mang tính thực tế cao như thiết kế phẳng, thiết kế stackable (xếp chồng) và responsive (đáp ứng), thiết kế thân thiện với mobile. Năm 2017 lại là năm đầy bùng nổ của những yếu tố sinh động kết hợp cùng màu sắc và hình dạng vui tươi. Ảnh hưởng bởi làn sóng tâm lý,  khi việc nhận thức về bản thân được đề cao, các xu hướng chủ đạo năm 2018 nổi bật với sự tương phản thẩm mỹ táo bạo, phản ánh sự khác biệt không ngừng giữa kỹ thuật số và analog.
+																
+											Xu hướng thiết kế năm 2019 - lại một lần nữa - sẽ để lại dấu ấn như cách những người anh em của mình đã làm. Dưới đây là 8 xu hướng chắc chắn sẽ làm mưa làm gió trong năm nay, cùng khám phá nhé!
+											Bacon ipsum dolor amet pork jerky landjaeger pork loin sirloin porchetta strip steak beef ribs. Cow jerky bresaola, bacon turkey pork belly corned beef. Jerky pork belly sausage, boudin corned beef doner spare ribs picanha tongue kevin cow beef ribs swine. Alcatra boudin ham shank prosciutto drumstick brisket ribeye ground round pork loin.
+						
+											Chuck corned beef salami beef ribs shankle, kielbasa filet mignon ball tip meatball short loin. Shoulder buffalo sausage tail hamburger cupim tongue meatloaf. Pork belly landjaeger shank cow venison filet mignon drumstick leberkas frankfurter spare ribs. Landjaeger kevin corned beef, tail venison capicola pork chop jerky frankfurter bresaola short ribs prosciutto leberkas. Picanha porchetta prosciutto ham hock shoulder chicken andouille pig drumstick tail strip steak.
+						
+											Pork chop tongue burgdoggen jerky shoulder pork belly salami bresaola. Spare ribs bresaola kielbasa tongue swine, short ribs jowl meatball brisket cupim andouille. Prosciutto beef ribs tail buffalo, tri-tip boudin capicola doner. Kevin ground round meatball tri-tip. Hamburger jowl sirloin cupim beef kielbasa pork chop meatloaf bacon biltong buffalo.
+						
+											Rump strip steak jerky, leberkas landjaeger beef pastrami bresaola. Tri-tip corned beef bacon, t-bone rump filet mignon kielbasa strip steak spare ribs cupim brisket. Shoulder fatback rump alcatra ham. Salami beef ribs filet mignon cupim pastrami kielbasa meatball pork belly jerky tail short ribs buffalo pork chop turducken strip steak. Leberkas tail fatback pancetta meatloaf burgdoggen doner picanha t-bone capicola ball tip pig andouille ham. Buffalo pork jerky frankfurter ham filet mignon.
+					
+											Pig chuck fatback pork, flank sirloin shankle drumstick turkey bacon beef. Bacon filet mignon hamburger, shoulder pork chop tri-tip t-bone. Ground round tri-tip cupim, bresaola chuck tenderloin ribeye andouille filet mignon tongue. Chicken fatback shoulder ribeye porchetta short ribs prosciutto. Sausage tongue beef meatloaf tenderloin. Pork loin beef prosciutto burgdoggen short loin.
+						
+											Brisket prosciutto burgdoggen sirloin pork belly hamburger picanha boudin pork loin. Fatback rump tenderloin frankfurter biltong, boudin meatball beef short loin. Shank ham hock shankle tenderloin. Ham turducken salami, landjaeger ball tip meatball burgdoggen shank frankfurter ribeye brisket. Pastrami brisket ham flank. Andouille spare ribs landjaeger corned beef, kevin doner jerky chicken tri-tip tongue jowl bacon beef shank kielbasa. Ham beef sirloin short ribs short loin meatloaf capicola pork chop bresaola shankle doner rump jerky.
+						
+											Salami venison strip steak pancetta pork loin pastrami, shank ground round pork belly prosciutto spare ribs capicola. Pastrami short loin spare ribs prosciutto porchetta chicken. Pastrami pork chop chuck hamburger sausage. Tongue shankle short ribs biltong ball tip.
+						
+											Ribeye andouille boudin pork chop. Shoulder tri-tip pancetta pork kevin corned beef jerky capicola ham bacon beef ribs beef boudin. Ribeye brisket ham hock beef cupim strip steak ham shoulder. Kielbasa salami strip steak tongue ham hock doner leberkas biltong meatball landjaeger meatloaf drumstick beef ribs.
+						
+											Ground round pastrami meatloaf pig, ham hock shoulder fatback ham strip steak bresaola turkey sausage. Porchetta cow shankle pork loin landjaeger jerky drumstick spare ribs prosciutto swine leberkas ground round. Corned beef pork loin andouille pork belly alcatra cow ribeye bresaola t-bone cupim porchetta. Venison ball tip beef ribs, kevin meatloaf shank chuck swine strip steak sausage shoulder spare ribs burgdoggen bresaola. Picanha leberkas turducken shank jerky pig cow. Short loin sirloin corned beef pork loin bresaola swine tri-tip ham pork belly. Short loin ham hock flank jerky shank doner spare ribs.
+						
+											Strip steak brisket biltong porchetta meatloaf short loin. Leberkas porchetta cow rump flank, venison salami. Biltong cupim ham short loin porchetta, fatback kielbasa swine ham hock pork belly strip steak pastrami sausage. Pork belly pancetta tri-tip ham hock.
+						
+											Does your lorem ipsum text long for something a little meatier? Give our generator a try… it’s tasty!
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row3">
+								<div class="col-md-12 text-center">
+									<div type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">
+										CLOSE
+									</div>
+								</div>
+							</div>
+						 </div>
+					</div>
+				</div>
+			  </div>
+		</div>
+		<!-- end modalPortfolio2 -->
+
+		<div class="modalPortfolio3 modal fade" id="modalPortfolio3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+					<div class="modal-content">
+						  <div class="modal-body">
+							  <div class="container-fluid">
+								<div class="row1">
+									<div class="col-md-12">
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true"><i class="far fa-times-circle"></i></span>
+										</button>
+									</div>
+								</div>
+								<div class="row2">
+									<div class="col-md-12">
+										<h1 class="text-center">Huong dan trong rau cai</h1>
+										<div class="row opening">
+											<div class="col-md-8 col-md-push-2">
+												<p>Xu hướng không tự sinh ra cũng không tự mất đi, chúng âm thầm phát triển như một phản ứng với thị hiếu và nhu cầu liên tục thay đổi của người dùng.</p>
+											</div>
+										</div>
+										<img src="images/vegetable6.jpg" alt="" class="img-responsive">
+										<div class="row content">
+											<div class="col-md-8 col-md-push-2">
+												<p>Xu hướng không tự sinh ra cũng không tự mất đi, chúng âm thầm phát triển như một phản ứng với thị hiếu và nhu cầu liên tục thay đổi của người dùng.
+												Trong năm 2016, thiết kế kỹ thuật số nhiệt liệt chào đón các yếu tố mang tính thực tế cao như thiết kế phẳng, thiết kế stackable (xếp chồng) và responsive (đáp ứng), thiết kế thân thiện với mobile. Năm 2017 lại là năm đầy bùng nổ của những yếu tố sinh động kết hợp cùng màu sắc và hình dạng vui tươi. Ảnh hưởng bởi làn sóng tâm lý,  khi việc nhận thức về bản thân được đề cao, các xu hướng chủ đạo năm 2018 nổi bật với sự tương phản thẩm mỹ táo bạo, phản ánh sự khác biệt không ngừng giữa kỹ thuật số và analog.
+																	
+												Xu hướng thiết kế năm 2019 - lại một lần nữa - sẽ để lại dấu ấn như cách những người anh em của mình đã làm. Dưới đây là 8 xu hướng chắc chắn sẽ làm mưa làm gió trong năm nay, cùng khám phá nhé!
+												Bacon ipsum dolor amet pork jerky landjaeger pork loin sirloin porchetta strip steak beef ribs. Cow jerky bresaola, bacon turkey pork belly corned beef. Jerky pork belly sausage, boudin corned beef doner spare ribs picanha tongue kevin cow beef ribs swine. Alcatra boudin ham shank prosciutto drumstick brisket ribeye ground round pork loin.
+							
+												Chuck corned beef salami beef ribs shankle, kielbasa filet mignon ball tip meatball short loin. Shoulder buffalo sausage tail hamburger cupim tongue meatloaf. Pork belly landjaeger shank cow venison filet mignon drumstick leberkas frankfurter spare ribs. Landjaeger kevin corned beef, tail venison capicola pork chop jerky frankfurter bresaola short ribs prosciutto leberkas. Picanha porchetta prosciutto ham hock shoulder chicken andouille pig drumstick tail strip steak.
+							
+												Pork chop tongue burgdoggen jerky shoulder pork belly salami bresaola. Spare ribs bresaola kielbasa tongue swine, short ribs jowl meatball brisket cupim andouille. Prosciutto beef ribs tail buffalo, tri-tip boudin capicola doner. Kevin ground round meatball tri-tip. Hamburger jowl sirloin cupim beef kielbasa pork chop meatloaf bacon biltong buffalo.
+							
+												Rump strip steak jerky, leberkas landjaeger beef pastrami bresaola. Tri-tip corned beef bacon, t-bone rump filet mignon kielbasa strip steak spare ribs cupim brisket. Shoulder fatback rump alcatra ham. Salami beef ribs filet mignon cupim pastrami kielbasa meatball pork belly jerky tail short ribs buffalo pork chop turducken strip steak. Leberkas tail fatback pancetta meatloaf burgdoggen doner picanha t-bone capicola ball tip pig andouille ham. Buffalo pork jerky frankfurter ham filet mignon.
+						
+												Pig chuck fatback pork, flank sirloin shankle drumstick turkey bacon beef. Bacon filet mignon hamburger, shoulder pork chop tri-tip t-bone. Ground round tri-tip cupim, bresaola chuck tenderloin ribeye andouille filet mignon tongue. Chicken fatback shoulder ribeye porchetta short ribs prosciutto. Sausage tongue beef meatloaf tenderloin. Pork loin beef prosciutto burgdoggen short loin.
+							
+												Brisket prosciutto burgdoggen sirloin pork belly hamburger picanha boudin pork loin. Fatback rump tenderloin frankfurter biltong, boudin meatball beef short loin. Shank ham hock shankle tenderloin. Ham turducken salami, landjaeger ball tip meatball burgdoggen shank frankfurter ribeye brisket. Pastrami brisket ham flank. Andouille spare ribs landjaeger corned beef, kevin doner jerky chicken tri-tip tongue jowl bacon beef shank kielbasa. Ham beef sirloin short ribs short loin meatloaf capicola pork chop bresaola shankle doner rump jerky.
+							
+												Salami venison strip steak pancetta pork loin pastrami, shank ground round pork belly prosciutto spare ribs capicola. Pastrami short loin spare ribs prosciutto porchetta chicken. Pastrami pork chop chuck hamburger sausage. Tongue shankle short ribs biltong ball tip.
+							
+												Ribeye andouille boudin pork chop. Shoulder tri-tip pancetta pork kevin corned beef jerky capicola ham bacon beef ribs beef boudin. Ribeye brisket ham hock beef cupim strip steak ham shoulder. Kielbasa salami strip steak tongue ham hock doner leberkas biltong meatball landjaeger meatloaf drumstick beef ribs.
+							
+												Ground round pastrami meatloaf pig, ham hock shoulder fatback ham strip steak bresaola turkey sausage. Porchetta cow shankle pork loin landjaeger jerky drumstick spare ribs prosciutto swine leberkas ground round. Corned beef pork loin andouille pork belly alcatra cow ribeye bresaola t-bone cupim porchetta. Venison ball tip beef ribs, kevin meatloaf shank chuck swine strip steak sausage shoulder spare ribs burgdoggen bresaola. Picanha leberkas turducken shank jerky pig cow. Short loin sirloin corned beef pork loin bresaola swine tri-tip ham pork belly. Short loin ham hock flank jerky shank doner spare ribs.
+							
+												Strip steak brisket biltong porchetta meatloaf short loin. Leberkas porchetta cow rump flank, venison salami. Biltong cupim ham short loin porchetta, fatback kielbasa swine ham hock pork belly strip steak pastrami sausage. Pork belly pancetta tri-tip ham hock.
+							
+												Does your lorem ipsum text long for something a little meatier? Give our generator a try… it’s tasty!
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row3">
+									<div class="col-md-12 text-center">
+										<div type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">
+											CLOSE
+										</div>
+									</div>
+								</div>
+							 </div>
+						</div>
+					</div>
+				  </div>
+			</div>
+			<!-- end modalPortfolio3 -->
+	<!-- end portfolio -->
+
+	<div class="about" id="about">	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<h1>about</h1>
+					<p>Bacon ipsum dolor amet kielbasa jowl shoulder leberkas burgdoggen capicola</p>
+				</div>
+			</div>
+			<div class="row profile">
+				<div class="col-md-4 text-center">
+					<img src="images/profile.png" alt="">
+					<h3 id="noidung">Anh Quang</h3>
+					<p>Lead Developer</p>
+					<div class="col-md-12 text-center icon">
+						<i class="fab fa-facebook-f"></i>
+						<i class="fab fa-twitter"></i>
+						<i class="fas fa-envelope"></i>
+					</div>
+				</div>
+				<div class="col-md-4 text-center">
+					<img src="images/profile.png" alt="">
+					<h3>Bich Thuan</h3>
+					<p>Project Manager</p>
+					<div class="col-md-12 text-center icon">
+						<i class="fab fa-facebook-f"></i>
+						<i class="fab fa-twitter"></i>
+						<i class="fas fa-envelope"></i>
+					</div>
+				</div>
+				<div class="col-md-4 text-center">
+					<img src="images/profile.png" alt="">
+					<h3>Trung Truc</h3>
+					<p>Embedded Engineer</p>
+					<div class="col-md-12 text-center icon">
+						<i class="fab fa-facebook-f"></i>
+						<i class="fab fa-twitter"></i>
+						<i class="fas fa-envelope"></i>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<b class="btn btn-success" id="socket1">More info</b>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end about -->
+	<div class="contact" id="contact">
+		<div class="background"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center ">
+					<h1>contact</h1>
+					<p>Bacon ipsum dolor amet kielbasa jowl shoulder leberkas burgdoggen capicola</p>
+				</div>
+			</div>
+			<div class="row contactForm">
+				<div class="col-md-6">
+					<h1 class="choose">Choose Your Diet</h1>
+					<p>I can help you make your life healthier and your body stronger in on time</p>
+				</div>
+				<div class="col-md-6 contactForm1">
+					<form>
+					  <div class="form-group">
+					    <input type="email" class="form-control"  placeholder="Name">
+					  </div>
+					  <div class="form-group">
+					    <input type="email" class="form-control"  placeholder="Email">
+					  </div>
+					  <div class="form-group">
+					    <textarea class="form-control"  rows="5" placeholder="Message"></textarea>
+					  </div>
+					</form>
+					<div class="btn-success btn-block text-center">Send a message</div>
+				</div>
+			</div>
+		</div>
+		<div class="background"></div>
+	</div>
+	<!-- end contact -->
+	
+	<div class="copyright">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-4">
+            <p>Copyright <i class="far fa-copyright"></i> by Smart Garden Website</p>
+          </div>
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+            <b class="fab fa-facebook-f"></b>
+            <b class="fab fa-twitter"></b>
+            <b class="fas fa-envelope"></b>
+          </div>
+        </div>
+      </div>
+		</div>
+    <script src="./javascripts/js/1.js"></script>
+</body>
+</html>

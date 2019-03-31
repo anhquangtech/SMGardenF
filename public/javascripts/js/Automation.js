@@ -1,8 +1,7 @@
 //Processbar
+//Template
 var bar = new ProgressBar.Circle(template, {
   color: '#FF7043',
-  // This has to be the same size as the maximum width to
-  // prevent clipping
   strokeWidth: 4,
   trailWidth: 1,
   easing: 'easeInOut',
@@ -12,7 +11,6 @@ var bar = new ProgressBar.Circle(template, {
   },
   from: { color: '#FF7043', width: 4 },
   to: { color: '#FF7043', width: 4 },
-  // Set default step function for all animate calls
   step: function(state, circle) {
     circle.path.setAttribute('stroke', state.color);
     circle.path.setAttribute('stroke-width', state.width);
@@ -23,19 +21,16 @@ var bar = new ProgressBar.Circle(template, {
     } else {
       circle.setText(value);
     }
-
   }
 });
-bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+bar.text.style.fontFamily = '"Lato", sans-serif';
 bar.text.style.fontSize = '50px';
 
 
 
-////////////////
+//Humidity
 var bar1 = new ProgressBar.Circle(humidity, {
   color: '#0277BD',
-  // This has to be the same size as the maximum width to
-  // prevent clipping
   strokeWidth: 4,
   trailWidth: 1,
   easing: 'easeInOut',
@@ -56,31 +51,25 @@ var bar1 = new ProgressBar.Circle(humidity, {
     } else {
       circle.setText(value);
     }
-
   }
 });
-bar1.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+bar1.text.style.fontFamily = '"Lato", sans-serif';
 bar1.text.style.fontSize = '50px';
 
 
-//Socket
+//Socket.io
 var socket = io("http://localhost:3000");
 socket.on("Server-send-data",function(data){
-  // $("#noidung").append(data);
-  console.log(typeof data.humidity);
-  // document.getElementById("template").innerHTML = "Temperature: "+ data.temperature;
-  // document.getElementById("humidity").innerHTML = "Humidity: "+ data.humidity;
   // socket.emit("client-send-data",{ my: 'data' });
   bar.animate((data.temperature)/100);  // Number from 0.0 to 1.0
   bar1.animate((data.humidity)/100);  // Number from 0.0 to 1.0  
 
   //Light
-  
   if(data.light == 1){
-    document.getElementById("light").innerHTML = "Led tat";
+    document.getElementById("light").innerHTML = "Light Off";
   }
   else if(data.light == 0){
-    document.getElementById("light").innerHTML = "Led sang";    
+    document.getElementById("light").innerHTML = "Light On";    
   }
 
   //Soil Moisture
