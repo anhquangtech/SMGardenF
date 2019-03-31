@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> Example </title>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="images/profile.png"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">  
+	<script type="text/javascript" src="./stylesheets/vendor/bootstrap.js"></script>
+	<link rel="stylesheet" href="./stylesheets/vendor/bootstrap.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+ 	<link rel="stylesheet" href="./stylesheets/css/Automation.css">
+	<!-- Socket -->
+	<script src="socket.io/socket.io.js"></script>
+    <script src="jquery.js"></script>
+	<!-- DateTimePicker-->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/2.14.1/moment.min.js"></script> 
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+</head>
+<body>
+	<div class="header">
+		<div class="nav text-center">
+			<img src="images/logo.png" alt="">
+		</div>
+	</div>
+	<!-- end header -->
+
+	<div class="menu container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h1>Automation</h1>
+				<div class="btn-group">
+				  <button type="button"  class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    Choose vegetable <span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu">
+				    <li><a href="#">Action</a></li>
+				    <li><a href="#">Another action</a></li>
+				    <li><a href="#">Something else here</a></li>
+				  </ul>
+				 </div>
+			</div>
+		</div>
+	</div>
+	<!-- end menu -->
+
+	<div class="infomation">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1>Display infomation of system</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<p class="sensor" id="sensor1">Temerature: C</p>
+					<div id="container">
+							<p id="template"></p>
+					</div>
+				</div>
+				<div class="col-md-4">
+						<p class="sensor" id="sensor2">Humidity: %</p>
+					<div id="container">
+						<p id="humidity"></p>
+					</div>
+				</div>
+				<div class="col-md-4 light">
+						<br>
+						<span class="far fa-lightbulb"></span> <span class="lighttext" id="light"></span>
+						<br>
+						<span class="fas fa-cloud-sun"></span> <span class="suntext" id="soil"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end infomation -->
+
+	<div class="control">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 harvestTime">
+					<p><i class="far fa-clock"></i> Harvest time</p>
+					<div class="form-group">
+					<div class='input-group date' id='datetimepicker1'>
+						<input type='text' class="form-control" />
+						<span class="input-group-addon">
+						<span class="glyphicon glyphicon-calendar calendar1"></span>
+						</span>
+					</div>
+               </div>
+				</div>
+				<div class="col-md-6 pump">
+					<p><img class="icon_pump" src="images/icon_pump.png" alt="">Water pump</p>
+					<div class="row">
+						<div class="col-md-6">
+							<img src="images/icon_pump.png" alt="">
+							<p class="pump-number">1</p>
+						</div>
+						<div class="col-md-6">
+							<img src="images/icon_pump.png" alt="">
+							<p class="pump-number">2</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end control -->
+
+	<div class="pullProcess">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1><i class="fas fa-person-booth"></i> Pull cover</h1>
+					<input class="progress1" step="2" type="range" min="0" max="100" value="0">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end pullProcess -->          
+	<div class="documentation">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1>Documentation</h1>
+					<p>Bacon ipsum dolor amet pancetta leberkas chuck, short loin corned beef bresaola spare ribs shankle boudin brisket buffalo. Alcatra jowl burgdoggen beef shoulder strip steak. Pork loin ground round drumstick flank cupim turducken pork chop tenderloin tongue fatback beef ribs t-bone shankle meatball prosciutto. Kevin porchetta ball tip, capicola shankle salami drumstick buffalo tri-tip. T-bone kevin tail chuck. Biltong pig brisket, capicola ham hock landjaeger kevin hamburger pancetta. Sausage tail ground round pig beef. Bacon ipsum dolor amet pancetta leberkas chuck, short loin corned beef bresaola spare ribs shankle boudin brisket buffalo. Alcatra jowl burgdoggen beef shoulder strip steak. Pork loin ground round drumstick flank cupim turducken pork chop tenderloin tongue fatback beef ribs t-bone shankle meatball prosciutto. Kevin porchetta ball tip, capicola shankle salami drumstick buffalo tri-tip. T-bone kevin tail chuck. Biltong pig brisket, capicola ham hock landjaeger kevin hamburger pancetta. Sausage tail ground round pig beef</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="./javascripts/js/processbar.js"></script>
+	<script src="./javascripts/js/Automation.js"></script>
+</body>
+</html>

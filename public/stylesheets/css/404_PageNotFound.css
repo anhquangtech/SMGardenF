@@ -1,0 +1,47 @@
+*{margin:0;padding:0; }
+ html,body{
+ 	height: 100%;
+ 	width: 100%;
+ 	overflow-x: hidden;
+ }
+
+.PageNotFound{
+	height: 100%;
+	width: 100%;
+	background-color: #34716A;
+	position: relative;
+}
+.PageNotFound .row .text-center{
+	margin: 0;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+.PageNotFound h1,h3,p{
+	color: white;
+	font-family: 'Lato', sans-serif;
+}
+.PageNotFound h1{
+	font-size: 100px;
+}
+.PageNotFound h3{
+	font-size:36px;
+}
+.PageNotFound p{
+	font-size:20px;
+	padding: 0px 10%;
+}
+.PageNotFound .btn-success{
+	padding: 10px 30px;
+	text-transform: uppercase;
+	border: 1px solid white;
+	background-color: #34716A;
+}
+.PageNotFound .btn-success:hover{
+	transition: 1s;
+	color: #34716A;
+	background-color: white;
+	border-color: white;
+}
