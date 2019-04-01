@@ -123,8 +123,8 @@
 .control .container .date .calendar1{
 	font-size: 50px;
 	text-align: center;
-	padding: 0px;
-	margin: 0px;
+	padding-right: 10px;
+	margin-right: 0px;
 	color: #34716A;
 }
 .control .container .date .input-group-addon{
@@ -135,17 +135,18 @@
 	text-align: center;
 }
 .control .container .date input[type = "text"]{
-	width: 100%;
+	width: 90%;
 	height: 80px;
+	margin-left: 10px;
 	font-size: 20px;
-  padding: 12px 20px;
+  	padding: 12px 20px;
 	resize: none;
 	border: 0px;
 	background-color: white;
-	box-shadow: 0px white;
+	box-shadow: none;
 }
 .control .container .date input[type = "text"]:hover{
-	box-shadow: 0px white;
+	box-shadow: none;
 }
 .control .container .pump .pump-number{
 	color: #34716A;

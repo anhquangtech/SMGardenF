@@ -105,7 +105,7 @@
 }
 
 /* DateTimePicker */
-.control .container .date .calendar1{
+/* .control .container .date .calendar1{
 	font-size: 50px;
 	text-align: center;
 	padding: 0px;
@@ -136,8 +136,10 @@
 	color: #34716A;
 	font-size: 30px;
 	padding-left: 50px;
+} */
+.control .input-group{
+	height: 100px;
 }
-
 /*PULL PROCESS*/
 input[type=range] {
   -webkit-appearance: none;

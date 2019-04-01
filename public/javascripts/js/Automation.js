@@ -77,9 +77,9 @@ socket.on("Server-send-data",function(data){
 });
 
 //DateTimePicker 
-$( document ).ready(function() {
-  $('#datetimepicker1').datetimepicker();
-});
+// $( document ).ready(function() {
+//   $('#datetimepicker1').datetimepicker();
+// });
 
 
 
