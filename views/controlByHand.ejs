@@ -33,16 +33,6 @@
 		<div class="row">
 			<div class="col-md-12 text-center">
 				<h1>Control By Hand</h1>
-				<div class="btn-group">
-				  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				    Choose vegetable <span class="caret"></span>
-				  </button>
-				  <ul class="dropdown-menu">
-				    <li><a href="#">Action</a></li>
-				    <li><a href="#">Another action</a></li>
-				    <li><a href="#">Something else here</a></li>
-				  </ul>
-				 </div>
 			</div>
 		</div>
 	</div>
@@ -52,7 +42,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<h1>Display infomation of system</h1>
+						<h2><i class="fas fa-info-circle"></i> Display infomation of system</h2>
 					</div>
 				</div>
 				<div class="row">
@@ -72,7 +62,7 @@
 							<br>
 							<span class="far fa-lightbulb"></span> <span class="lighttext" id="light"></span>
 							<br>
-							<span class="fas fa-cloud-sun"></span> <span class="suntext" id="soil"></span>
+							<span class="fas fa-cloud-sun"></span> <span class="suntext"></span>
 					</div>
 				</div>
 			</div>
@@ -80,36 +70,49 @@
 	<!-- end infomation -->
 
 	<div class="control">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<h1>Control</h1>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6 harvestTime">
-					<p><i class="far fa-clock"></i> Time</p>
-					<div class='input-group date' id='datetimepicker1'>
-						<input type='text' class="form-control" />
-						<span class="input-group-addon">
-						<span class="glyphicon glyphicon-calendar calendar1"></span>
-						</span>
-					</div>
-				</div>
-				<div class="col-md-6 pump">
-					<p><img class="icon_pump" src="images/icon_pump.png" alt="">Water pump</p>
-					<div class="row">
-						<div class="col-md-6">
-							<img src="images/icon_pump.png" alt="">
-							<p class="pump-number">1</p>
+				<div class="container">
+					<h2 class="choose-options"><i class="fas fa-user-cog"></i> Controls</h2>
+					<ul class="nav nav-tabs">
+						<li class="active khay"><a data-toggle="tab" href="#home"><i class="fas fa-box"></i> Khay A</a></li>
+						<li class="khay"><a data-toggle="tab" href="#menu1"><i class="fas fa-box"></i> Khay B</a></li>						
+					</ul>
+				
+					<div class="tab-content">
+						<br>
+						<div id="home" class="tab-pane fade in active">
+							<div class="row">
+								<div class="col-md-4">
+									<h2 class="khay1"><i class="far fa-clock"></i> Harvest time</h2>
+									<input class="info-khay1 date-time" type='text' class="form-control" id='datetimepicker4' />
+								</div>
+								<div class="col-md-4">
+									<h2 class="khay1">% Soil Moisture</h2>
+									<p class="info-khay1" id="soil"></p>
+								</div>
+								<div class="col-md-4">
+									<h2 class="khay1">Pump water</h2>
+									<p class="info-khay1">ON</p>
+								</div>
+							</div>
 						</div>
-						<div class="col-md-6">
-							<img src="images/icon_pump.png" alt="">
-							<p class="pump-number">2</p>
+						<div id="menu1" class="tab-pane fade">
+								<div class="row">
+									<div class="col-md-4">
+										<h2 class="khay2 harvestTime"><i class="far fa-clock"></i> Harvest time</h2>
+									<input class="info-khay2 date-time" type='text' class="form-control" id='datetimepicker4' />
+									</div>
+									<div class="col-md-4">
+										<h2 class="khay2">% Soil Moisture</h2>
+										<p class="info-khay2">990</p>
+									</div>
+									<div class="col-md-4">
+										<h2 class="khay2">Pump water</h2>
+										<p class="info-khay2">ON</p>
+									</div>
+								</div>
+						</div>
 						</div>
 					</div>
-				</div>
-			</div>
 		</div>
 	</div>
 	<!-- end control -->

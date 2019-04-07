@@ -23,7 +23,7 @@ var bar = new ProgressBar.Circle(template, {
     }
   }
 });
-bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+bar.text.style.fontFamily = '"Lato", sans-serif';
 bar.text.style.fontSize = '50px';
 
 //Humidity
@@ -51,7 +51,7 @@ var bar1 = new ProgressBar.Circle(humidity, {
 
   }
 });
-bar1.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+bar1.text.style.fontFamily = '"Lato", sans-serif';
 bar1.text.style.fontSize = '50px';
 
 
@@ -75,5 +75,5 @@ socket.on("Server-send-data",function(data){
 
 //DateTimePicker 
 $( document ).ready(function() {
-  $('#datetimepicker1').datetimepicker();
+  $('.date-time').datetimepicker();
 });
