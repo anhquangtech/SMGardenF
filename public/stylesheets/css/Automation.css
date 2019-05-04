@@ -104,6 +104,19 @@
 		padding-top: 4%;
 		cursor: pointer;
 }
+.control .pumpOnOff{
+	text-align: center;
+		background-color: gray;
+		height: 100px;
+		width: 100%;
+		border: 1px solid #ff7043;
+		border-radius: 5px;
+		font-size: 50px;
+		font-family: 'Lato', sans-serif;
+		color: white;
+		padding-top: 4%;
+		cursor: pointer;
+}
 .control .khay{
 	font-size: 25px;
 	font-family: 'Lato', sans-serif;
@@ -126,6 +139,7 @@
 	font-family: 'Lato', sans-serif;
 	color:  #34716A;
 }
+
 /*PULL PROCESS*/
 input[type=range] {
   -webkit-appearance: none;

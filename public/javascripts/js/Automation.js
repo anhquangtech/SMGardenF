@@ -89,10 +89,11 @@ var pumpJson = {
     "pumpOn": 1,
 }
 var pumpJson2 = {
-  "pumpOff": 2,
+    "pumpOff": 2,
 }
 pump.onclick = function(){
   socket.emit("PumpOn-send-sever-data", pumpJson);
+  pump.classList.toggle("pumpOnOff");
 }
 pump2.onclick = function(){
   socket.emit("PumpOff-send-sever-data", pumpJson2);
