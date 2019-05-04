@@ -25,18 +25,30 @@ io.on('connection', function(socket) {
 		}
 		
 		//Cài đặt chuỗi JSON, tên biến JSON này là json 
-		var json = {
-			"led": led, //có một phần tử là "led", phần tử này chứa giá trị của mảng led.
-			// "content": "hello"
-		}
+		// var json = {
+		// 	"led": led, //có một phần tử là "led", phần tử này chứa giá trị của mảng led.
+		// 	// "content": "hello"
+		// }
 		// socket.emit('LED', json) //Gửi lệnh LED với các tham số của của chuỗi JSON
 		socket.on("client-send-data",function(dulieu){
             // console.log(dulieu); //Du lieu nay la thong so cam bien
             socket.broadcast.emit("Server-send-data", dulieu);
-        });
+		});
+
+		
 		// console.log("send LED")//Ghi ra console.log là đã gửi lệnh LED
 	}, 2000)//200ms
-	
+
+	//Website send Pump data event
+	socket.on("PumpOn-send-sever-data",function(pumpOn){
+		console.log(pumpOn);
+		socket.broadcast.emit("PumpOn-send-nodemcu-data",pumpOn);
+	});
+	socket.on("PumpOff-send-sever-data",function(pumpOff){
+		console.log(pumpOff);
+		socket.broadcast.emit("PumpOff-send-nodemcu-data",pumpOff);
+	});
+
 	//Khi socket client bị mất kết nối thì chạy hàm sau.
 	socket.on('disconnect', function() {
 		console.log("Client Disconnect" + socket.id) ;	//in ra màn hình console cho vui

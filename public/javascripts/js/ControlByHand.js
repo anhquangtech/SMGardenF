@@ -64,10 +64,10 @@ socket.on("Server-send-data",function(data){
 
   //Light
   if(data.light == 1){
-    document.getElementById("light").innerHTML = "Light Off";
+    document.getElementById("light").innerHTML = "Sunny";
   }
   else if(data.light == 0){
-    document.getElementById("light").innerHTML = "Light On";    
+    document.getElementById("light").innerHTML = "Rain";    
   }
   //Soil Moisture
   document.getElementById("soil").innerHTML = data.SoilMoisture;

@@ -102,6 +102,7 @@
 		font-family: 'Lato', sans-serif;
 		color: white;
 		padding-top: 4%;
+		cursor: pointer;
 }
 .control .info-khay2{
 		text-align: center;
@@ -114,6 +115,7 @@
 		font-family: 'Lato', sans-serif;
 		color: white;
 		padding-top: 4%;
+		cursor: pointer;
 }
 .control .khay{
 	font-size: 25px;
