@@ -85,19 +85,24 @@ socket.on("Server-send-data",function(data){
 // Socket.io: Website => Socket server => NodeMcu
 var pump = document.querySelector('.pump');
 var pump2 = document.querySelector('.pump2');
+
 var pumpJson = {
     "pumpOn": 1,
 }
 var pumpJson2 = {
     "pumpOff": 2,
 }
-pump.onclick = function(){
-  socket.emit("PumpOn-send-sever-data", pumpJson);
-  pump.classList.toggle("pumpOnOff");
-}
-pump2.onclick = function(){
-  socket.emit("PumpOff-send-sever-data", pumpJson2);
-}
+
+$(function() {
+  $('#toggle-event').change(function() {
+    $('#console-event').html('Toggle: ' + $(this).prop('checked'));
+    if( $(this).prop('checked') == true){
+      socket.emit("PumpOn-send-sever-data", pumpJson);
+    } else{
+      socket.emit("PumpOff-send-sever-data", pumpJson2);
+    };
+  })
+})
 
 
 
