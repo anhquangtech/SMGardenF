@@ -84,8 +84,8 @@
 						<div id="home" class="tab-pane fade in active">
 							<div class="row">
 								<div class="col-md-12">
-										<select class="form-control form1" id="gender1">
-											<option>Rau cải</option>
+										<select class="form-control form1" id="genderA" onchange="jsFunction(this.value);">
+											<option id="rauCaiA">Rau cải</option>
 											<option>Rau mầm</option>
 										</select>     
 								</div>
@@ -97,7 +97,7 @@
 								</div>
 								<div class="col-md-4">
 									<h2 class="khay1">% Soil Moisture</h2>
-									<p class="info-khay1" id="soil"></p>
+									<p class="info-khay1" id="soil1"></p>
 								</div>
 								<div class="col-md-4">
 									<h2 class="khay1">Pump water</h2>
@@ -121,7 +121,7 @@
 									</div>
 									<div class="col-md-4">
 										<h2 class="khay2">% Soil Moisture</h2>
-										<p class="info-khay2">990</p>
+										<p class="info-khay2" id="soil2"></p>
 									</div>
 									<div class="col-md-4">
 										<h2 class="khay2">Pump water</h2>

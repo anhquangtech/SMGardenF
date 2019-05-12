@@ -14,6 +14,7 @@ var ip = require('ip');
 const PORT = 3000;
 server.listen(PORT);
 console.log("Server nodejs chay tai dia chi: " + ip.address() + ":" + PORT);
+require('events').EventEmitter.prototype._maxListeners = 0;
 
 //Khi có mệt kết nối được tạo giữa Socket Client và Socket Server
 io.on('connection', function(socket) {	

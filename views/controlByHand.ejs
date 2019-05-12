@@ -8,6 +8,7 @@
 	<script type="text/javascript" src="./stylesheets/vendor/bootstrap.js"></script>
 	<link rel="stylesheet" href="./stylesheets/vendor/bootstrap.css">
 	<!-- <link rel="stylesheet" href="vendor/fontawesome.css"> -->
+	<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
  	<link rel="stylesheet" href="./stylesheets/css/ControlByHand.css"></head>
 	<!-- Socket -->
@@ -60,7 +61,7 @@
 					</div>
 					<div class="col-md-4 light">
 							<br>
-							<span class="far fa-lightbulb"></span> <span class="lighttext" id="light"></span>
+							<span class="fas fa-cloud-sun"></span> <span class="lighttext" id="light"></span>
 							<br>
 							<span class="fas fa-cloud-sun"></span> <span class="suntext"></span>
 					</div>
@@ -87,11 +88,11 @@
 								</div>
 								<div class="col-md-4">
 									<h2 class="khay1">% Soil Moisture</h2>
-									<p class="info-khay1" id="soil"></p>
+									<p class="info-khay1" id="soil1"></p>
 								</div>
 								<div class="col-md-4">
 									<h2 class="khay1">Pump water</h2>
-									<p class="info-khay1">ON</p>
+									<input id="toggle-event" data-style="ios" data-onstyle="info-khay1" type="checkbox" data-toggle="toggle" data-width="360" data-height="100">
 								</div>
 							</div>
 						</div>
@@ -103,11 +104,11 @@
 									</div>
 									<div class="col-md-4">
 										<h2 class="khay2">% Soil Moisture</h2>
-										<p class="info-khay2">990</p>
+										<p class="info-khay2" id="soil2"></p>
 									</div>
 									<div class="col-md-4">
 										<h2 class="khay2">Pump water</h2>
-										<p class="info-khay2">ON</p>
+										<input id="toggle-event" data-style="ios" data-onstyle="info-khay1" type="checkbox" data-toggle="toggle" data-width="360" data-height="100">
 									</div>
 								</div>
 						</div>
@@ -128,6 +129,7 @@
 		</div>
 	</div>
 	<!-- end pullProcess -->
+	<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 	<script src="./javascripts/js/processbar.js"></script>
 	<script src="./javascripts/js/ControlByHand.js"></script>
 </body>

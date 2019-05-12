@@ -135,6 +135,12 @@
 	height: 44px;
 	box-shadow: #0277bd;
 }
+.toggle.ios, .toggle-on.ios, .toggle-off.ios {
+	background-color: #ff7043;
+}
+.toggle.info-khay1{
+	background-color: #ff7043;
+}
 .control .choose-options{
 	font-family: 'Lato', sans-serif;
 	color:  #34716A;

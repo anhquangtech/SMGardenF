@@ -70,8 +70,33 @@ socket.on("Server-send-data",function(data){
     document.getElementById("light").innerHTML = "Rain";    
   }
   //Soil Moisture
-  document.getElementById("soil").innerHTML = data.SoilMoisture;
+  document.getElementById("soil1").innerHTML = data.SoilMoisture1;
+  document.getElementById("soil2").innerHTML = data.SoilMoisture2;
 });
+
+// Event script
+// Socket.io: Website => Socket server => NodeMcu
+//Pump water
+var pump = document.querySelector('.pump');
+var pump2 = document.querySelector('.pump2');
+
+var pumpJson = {
+    "pumpOn": 1,
+}
+var pumpJson2 = {
+    "pumpOff": 2,
+}
+
+$(function() {
+  $('#toggle-event').change(function() {
+    $('#console-event').html('Toggle: ' + $(this).prop('checked'));
+    if( $(this).prop('checked') == true){
+      socket.emit("PumpOn-send-sever-data", pumpJson);
+    } else{
+      socket.emit("PumpOff-send-sever-data", pumpJson2);
+    };
+  })
+})
 
 //DateTimePicker 
 $( document ).ready(function() {
