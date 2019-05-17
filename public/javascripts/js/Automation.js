@@ -59,7 +59,7 @@ bar1.text.style.fontSize = '50px';
 
 //Socket.io NodeMcu => Server => Website
 var socket = io("http://localhost:3000");
-socket.on("Server-send-data",function(data){
+socket.on("Server-send-data",function (data){
   // socket.emit("client-send-data",{ my: 'data' });
   bar.animate((data.temperature)/100);  // Number from 0.0 to 1.0
   bar1.animate((data.humidity)/100);  // Number from 0.0 to 1.0  
@@ -76,7 +76,25 @@ socket.on("Server-send-data",function(data){
   document.getElementById("soil1").innerHTML = data.SoilMoisture1;
   document.getElementById("soil2").innerHTML = data.SoilMoisture2;
 });
-
+//Automation ON/OFF Pump
+//Khay A
+//Rau cai
+function jsFunction(value)
+{
+    var RauCai = {
+      "RauCai": 1,
+    }
+    var RauMam = {
+      "RauMam": 2,
+    } 
+    if(value=="Rau cải"){
+      socket.emit("RauCai-send-server-data", RauCai);
+    } 
+    else if(value == "Rau mầm"){
+      socket.emit("RauMam-send-server-data", RauMam);
+    }
+}
+//Rau mam
 //DateTimePicker 
 // $( document ).ready(function() {
 //   $('#datetimepicker1').datetimepicker();
@@ -87,38 +105,23 @@ socket.on("Server-send-data",function(data){
 // var pump = document.querySelector('.pump');
 // var pump2 = document.querySelector('.pump2');
 
-// var pumpJson = {
-//     "pumpOn": 1,
+// var RauCai = {
+//     "RauCai": 1,
 // }
-// var pumpJson2 = {
-//     "pumpOff": 2,
+// var RauMam = {
+//     "RauMam": 2,
 // }
 
 // $(function() {
 //   $('#toggle-event').change(function() {
 //     $('#console-event').html('Toggle: ' + $(this).prop('checked'));
 //     if( $(this).prop('checked') == true){
-//       socket.emit("PumpOn-send-sever-data", pumpJson);
+//       socket.emit("RauCai-send-server-data", RauCai);
 //     } else{
-//       socket.emit("PumpOff-send-sever-data", pumpJson2);
+//       socket.emit("RauMam-send-server-data", RauMam);
 //     };
 //   })
 // })
 
-//Automation ON/OFF Pump
-//Khay A
-//Rau cai
-function jsFunction(value)
-{
-    if(value=="Rau cải"){
-      // if(data.humidity > 80){
-      //   console.log("Do am cao vai lozz");
-      // }
-      console.log('Rau cai');
-    } 
-    else if(value == "Rau mầm"){
-      console.log("Rau mam");
-    }
-}
-//Rau mam
+
 

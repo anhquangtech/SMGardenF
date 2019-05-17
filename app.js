@@ -50,6 +50,16 @@ io.on('connection', function(socket) {
 		socket.broadcast.emit("PumpOff-send-nodemcu-data",pumpOff);
 	});
 
+	//Website send Vegetable data event
+	socket.on("RauCai-send-server-data",function(RauCai){
+		console.log(RauCai);
+		socket.broadcast.emit("RauCai-send-nodemcu-data",RauCai);
+	});
+	socket.on("RauMam-send-server-data",function(RauMam){
+		console.log(RauMam);
+		socket.broadcast.emit("RauMam-send-nodemcu-data",RauMam);
+	});
+
 	//Khi socket client bị mất kết nối thì chạy hàm sau.
 	socket.on('disconnect', function() {
 		console.log("Client Disconnect" + socket.id) ;	//in ra màn hình console cho vui
