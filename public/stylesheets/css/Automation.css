@@ -92,17 +92,17 @@
 		cursor: pointer;
 }
 .control .info-khay2{
-		text-align: center;
-		background-color: #0277bd;
-		height: 100px;
-		width: 100%;
-		border: 1px solid #0277bd;
-		border-radius: 5px;
-		font-size: 50px;
-		font-family: 'Lato', sans-serif;
-		color: white;
-		padding-top: 4%;
-		cursor: pointer;
+	text-align: center;
+	background-color: #ff7043;
+	height: 100px;
+	width: 100%;
+	border: 1px solid #ff7043;
+	border-radius: 5px;
+	font-size: 50px;
+	font-family: 'Lato', sans-serif;
+	color: white;
+	padding-top: 4%;
+	cursor: pointer;
 }
 .toggle.ios, .toggle-on.ios, .toggle-off.ios {
 	background-color: #ff7043;
@@ -110,7 +110,12 @@
 .toggle.info-khay1{
 	background-color: #ff7043;
 }
-
+.toggle.ios, .toggle-on.ios, .toggle-off.ios {
+	background-color: #ff7043;
+}
+.toggle.info-khay2{
+	background-color: #ff7043;
+}
 .control .khay{
 	font-size: 25px;
 	font-family: 'Lato', sans-serif;

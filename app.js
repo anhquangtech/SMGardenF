@@ -41,6 +41,7 @@ io.on('connection', function(socket) {
 	}, 2000)//200ms
 
 	//Website send Pump data event
+	//Khay A
 	socket.on("PumpOn-send-sever-data",function(pumpOn){
 		console.log(pumpOn);
 		socket.broadcast.emit("PumpOn-send-nodemcu-data",pumpOn);
@@ -49,8 +50,18 @@ io.on('connection', function(socket) {
 		console.log(pumpOff);
 		socket.broadcast.emit("PumpOff-send-nodemcu-data",pumpOff);
 	});
+	//Khay B
+	socket.on("PumpOnB-send-sever-data",function(pumpOnB){
+		console.log(pumpOnB);
+		socket.broadcast.emit("PumpOnB-send-nodemcu-data",pumpOnB);
+	});
+	socket.on("PumpOffB-send-sever-data",function(pumpOffB){
+		console.log(pumpOffB);
+		socket.broadcast.emit("PumpOffB-send-nodemcu-data",pumpOffB);
+	});
 
 	//Website send Vegetable data event
+	//Khay A
 	socket.on("RauCai-send-server-data",function(RauCai){
 		console.log(RauCai);
 		socket.broadcast.emit("RauCai-send-nodemcu-data",RauCai);
@@ -58,6 +69,16 @@ io.on('connection', function(socket) {
 	socket.on("RauMam-send-server-data",function(RauMam){
 		console.log(RauMam);
 		socket.broadcast.emit("RauMam-send-nodemcu-data",RauMam);
+	});
+
+	//KhayB
+	socket.on("RauCaiB-send-server-data",function(RauCaiB){
+		console.log(RauCaiB);
+		socket.broadcast.emit("RauCaiB-send-nodemcu-data",RauCaiB);
+	});
+	socket.on("RauMamB-send-server-data",function(RauMamB){
+		console.log(RauMamB);
+		socket.broadcast.emit("RauMamB-send-nodemcu-data",RauMamB);
 	});
 
 	//Khi socket client bị mất kết nối thì chạy hàm sau.

@@ -113,8 +113,8 @@
 		border-radius: 5px;
 		font-size: 50px;
 		font-family: 'Lato', sans-serif;
-		color: white;
 		padding-top: 4%;
+		color: white;
 		cursor: pointer;
 }
 .control .khay{
@@ -141,6 +141,13 @@
 .toggle.info-khay1{
 	background-color: #ff7043;
 }
+.toggle.ios2, .toggle-on.ios2, .toggle-off.ios2 {
+	background-color: #0277bd;
+}
+.toggle.info-khay2{
+	background-color: #0277bd;
+}
+
 .control .choose-options{
 	font-family: 'Lato', sans-serif;
 	color:  #34716A;

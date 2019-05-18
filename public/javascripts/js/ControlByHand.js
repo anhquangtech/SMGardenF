@@ -87,6 +87,14 @@ var pumpJson2 = {
     "pumpOff": 2,
 }
 
+var pumpJsonB = {
+  "pumpOnB": 1,
+}
+var pumpJson2B = {
+  "pumpOffB": 2,
+}
+
+//Pump khay A
 $(function() {
   $('#toggle-event').change(function() {
     $('#console-event').html('Toggle: ' + $(this).prop('checked'));
@@ -94,6 +102,17 @@ $(function() {
       socket.emit("PumpOn-send-sever-data", pumpJson);
     } else{
       socket.emit("PumpOff-send-sever-data", pumpJson2);
+    };
+  })
+})
+//Pump Khay B
+$(function() {
+  $('#toggle-event2').change(function() {
+    $('#console-event').html('Toggle: ' + $(this).prop('checked'));
+    if( $(this).prop('checked') == true){
+      socket.emit("PumpOnB-send-sever-data", pumpJsonB);
+    } else{
+      socket.emit("PumpOffB-send-sever-data", pumpJson2B);
     };
   })
 })

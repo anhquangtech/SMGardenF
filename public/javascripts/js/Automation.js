@@ -78,7 +78,6 @@ socket.on("Server-send-data",function (data){
 });
 //Automation ON/OFF Pump
 //Khay A
-//Rau cai
 function jsFunction(value)
 {
     var RauCai = {
@@ -94,34 +93,30 @@ function jsFunction(value)
       socket.emit("RauMam-send-server-data", RauMam);
     }
 }
+
+//Khay B
+function jsFunctionB(value)
+{
+    var RauCaiB = {
+      "RauCaiB": 1,
+    }
+    var RauMamB = {
+      "RauMamB": 2,
+    } 
+    if(value=="Rau cải"){
+      socket.emit("RauCaiB-send-server-data", RauCaiB);
+    } 
+    else if(value == "Rau mầm"){
+      socket.emit("RauMamB-send-server-data", RauMamB);
+    }
+}
 //Rau mam
 //DateTimePicker 
 // $( document ).ready(function() {
 //   $('#datetimepicker1').datetimepicker();
 // });
 
-// // Event script
-// // Socket.io: Website => Socket server => NodeMcu
-// var pump = document.querySelector('.pump');
-// var pump2 = document.querySelector('.pump2');
 
-// var RauCai = {
-//     "RauCai": 1,
-// }
-// var RauMam = {
-//     "RauMam": 2,
-// }
-
-// $(function() {
-//   $('#toggle-event').change(function() {
-//     $('#console-event').html('Toggle: ' + $(this).prop('checked'));
-//     if( $(this).prop('checked') == true){
-//       socket.emit("RauCai-send-server-data", RauCai);
-//     } else{
-//       socket.emit("RauMam-send-server-data", RauMam);
-//     };
-//   })
-// })
 
 
 
