@@ -16,7 +16,7 @@ SocketIOClient client;
 const char* ssid = "Daq";          //Tên mạng Wifi mà Socket server của bạn đang kết nối
 const char* password = "123456789";  //Pass mạng wifi ahihi, anh em rãnh thì share pass cho mình với.
  
-char host[] = "192.168.1.4";  //Địa chỉ IP dịch vụ, hãy thay đổi nó theo địa chỉ IP Socket server của bạn.
+char host[] = "192.168.1.5";  //Địa chỉ IP dịch vụ, hãy thay đổi nó theo địa chỉ IP Socket server của bạn.
 int port = 3000;                  //Cổng dịch vụ socket server do chúng ta tạo!
  
 //từ khóa extern: dùng để #include các biến toàn cục ở một số thư viện khác. Trong thư viện SocketIOClient có hai biến toàn cục
@@ -86,6 +86,7 @@ void setup()
 }
 
 int trangthai = 1;
+int trangthaiB = 2;
 void loop()
 {   
     //trangthai = 10 : Rau Cai
@@ -139,10 +140,10 @@ void loop()
         Serial.println(RID);
         Serial.println(Rfull);
           //Server => NodeMcu: Pump water
+          //Khay A
           if(RID == "PumpOn-send-nodemcu-data"){
                  Serial.println("Pump On");
-                 Serial.println(trangthai);
-                 
+                 digitalWrite(D7,HIGH);
 //                 digitalWrite(SD2,HIGH);
 //                 delay(2000);
 //                 digitalWrite(SD2,LOW);
@@ -152,16 +153,37 @@ void loop()
                  Serial.println("Pump Off");
                  digitalWrite(D7,LOW);
           }
+          //Khay B
+          if(RID == "PumpOnB-send-nodemcu-data"){
+                 Serial.println("Pump On B");
+                 digitalWrite(D8,HIGH);
+          }
 
+          if(RID == "PumpOffB-send-nodemcu-data"){
+                 Serial.println("Pump Off B");
+                 digitalWrite(D8,LOW);
+          }
+          
           //Server => NodeMcu: Vegetable
+          //Khay A
           if(RID == "RauCai-send-nodemcu-data"){
                  Serial.println("RauCai");
                  trangthai = 10;
           }
          
           if(RID == "RauMam-send-nodemcu-data"){
-                 Serial.println("RauMam");
+                 Serial.println("RauMamB");
                  trangthai = 11;
+          }
+          //Khay B
+          if(RID == "RauCaiB-send-nodemcu-data"){
+                 Serial.println("RauCai");
+                 trangthaiB = 12;
+          }
+         
+          if(RID == "RauMamB-send-nodemcu-data"){
+                 Serial.println("RauMamB");
+                 trangthaiB = 13;
           }
      }
     //Automation Khay A
@@ -178,7 +200,6 @@ void loop()
           Serial.println("Khong tuoi nuoc rau cai");
           digitalWrite(D7,LOW);
         }
-    
     }
     //Rau Mam
     if(trangthai == 11){
@@ -192,39 +213,36 @@ void loop()
           Serial.println("Khong tuoi nuoc rau mam");
           digitalWrite(D7,LOW);
         }
-    
     }
-    
-//    //Automation Khay B
-//    Serial.println(trangthai);
-//    //Rau Cai
-//    if(trangthai == 12){
-//        if(dht.getHumidity() < 80 && DATA_DA2 < 836){
-//          Serial.println("Tuoi nuoc rau cai");
-//          digitalWrite(D7,HIGH);
-//          delay(5000);
-//          digitalWrite(D7,LOW);
-//        }
-//        else{
-//          Serial.println("Khong tuoi nuoc rau cai");
-//          digitalWrite(D7,LOW);
-//        }
-//    
-//    }
-//    //Rau Mam
-//    if(trangthai == 13){
-//        if(dht.getHumidity() < 100 && DATA_DA2 < 866){
-//          Serial.println("Tuoi nuoc rau mam");
-//          digitalWrite(D7,HIGH);
-//          delay(5000);
-//          digitalWrite(D7,LOW);
-//        }
-//        else{
-//          Serial.println("Khong tuoi nuoc rau mam");
-//          digitalWrite(D7,LOW);
-//        }
-//    
-//    }
+
+    //Automation Khay B
+    //Rau Cai
+    if(trangthaiB == 12){
+        if(dht.getHumidity() < 80 && DATA_DA2 < 836){
+          Serial.println("Tuoi nuoc rau cai");
+          digitalWrite(D8,HIGH);
+          delay(5000);
+          digitalWrite(D8,LOW);
+        }
+        else{
+          Serial.println("Khong tuoi nuoc rau cai");
+          digitalWrite(D8,LOW);
+        }
+    }
+    //Rau Mam
+    if(trangthaiB == 13){
+        if(dht.getHumidity() < 100 && DATA_DA2 < 866){
+          Serial.println("Tuoi nuoc rau mam");
+          digitalWrite(D8,HIGH);
+          delay(5000);
+          digitalWrite(D8,LOW);
+        }
+        else{
+          Serial.println("Khong tuoi nuoc rau mam");
+          digitalWrite(D8,LOW);
+        }
+    }
+
     //Kết nối lại!
     if (!client.connected()) {
       client.reconnect(host, port);
