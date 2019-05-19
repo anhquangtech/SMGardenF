@@ -11,6 +11,10 @@ DHTesp dht;
 #define DA_PIN A0   //AO - ADC 00 đọc DATA độ ẩm đất
 #define DA_vcc1_PIN 16   //D0 - GPIO 16 Điều khiển nguồn để đọc Độ ẩm 1.
 #define DA_vcc2_PIN 5    //D1 - GPIO 05 Điều khiển nguồn để đọc Độ ẩm 2.
+#define SW1_PIN 2
+#define SW2_PIN 14
+#define SW3_PIN 12    //switch hanh trinh
+
 //#define SD2 9
 SocketIOClient client;
 const char* ssid = "Daq";          //Tên mạng Wifi mà Socket server của bạn đang kết nối
@@ -38,12 +42,17 @@ void setup()
     //test code
     dht.setup(4, DHTesp::DHT11); // Connect DHT sensor to GPIO 17
     pinMode(LED, OUTPUT);
-    pinMode(D3, OUTPUT); //Connect YL-83
+    pinMode(D3, INPUT); //Connect YL-83
 
     // 29/4/2019
     pinMode(D7, OUTPUT); //Connect Relay 1
     pinMode(D8, OUTPUT); //Connetc Relay 2
-//    pinMode(A0, INPUT);
+
+    // 19/5/2019
+    pinMode (SW1_PIN,INPUT);
+    pinMode (SW2_PIN,INPUT);
+    pinMode (SW3_PIN,INPUT);
+    pinMode(A0, INPUT);
 //    pinMode(SD2, OUTPUT);
     
     // 11/5/2019
@@ -105,6 +114,65 @@ void loop()
     DATA_DA2 = analogRead (A0);
     digitalWrite (DA_vcc2_PIN,LOW);
     delay(1000);
+
+    // 19/5/2019
+    int STT_SW1 = digitalRead(SW1_PIN);
+//    int STT_SW2 = digitalRead(SW2_PIN);
+    int STT_SW3 = digitalRead(SW3_PIN);
+//    Serial.print (STT_SW1);
+//    Serial.print ("     ");
+//    Serial.print (STT_SW2);
+//    Serial.print ("     ");
+//    Serial.println (STT_SW3);
+
+    //Kem rem neu troi mua
+    if(digitalRead(D3) == 1){
+      //Neu rem dang o vi tri A
+      if(STT_SW1 == 1 && STT_SW3 == 0){
+        //Relay A: ON
+        Serial.println("TH1: Relay A on");
+      }
+      
+      //Neu rem dang o vi tri B
+      if(STT_SW1 == 0 && STT_SW3 == 1){
+        //Relay B: ON
+        Serial.println("TH1: Relay B on");
+      }
+
+      //Neu da keo xong rem
+      if(STT_SW1 == 1 && STT_SW3 == 1){
+        Serial.println("TH1: Relay A off");
+        Serial.println("TH:1 Relay B off");
+      }
+    }
+
+    //Keo rem neu troi qua nong
+    if(digitalRead(D3) == 0 && dht.getHumidity() > 30){
+        //Neu rem dang o vi tri A
+      if(STT_SW1 == 1 && STT_SW3 == 0){
+        //Relay A: ON
+        Serial.println("TH2: Relay A on");
+      }
+      
+      //Neu rem dang o vi tri B
+      if(STT_SW1 == 0 && STT_SW3 == 1){
+        //Relay B: ON
+        Serial.println("TH2: Relay B on");
+      }
+
+      //Neu da keo xong rem
+      if(STT_SW1 == 1 && STT_SW3 == 1){
+        Serial.println("TH2: Relay A off");
+        Serial.println("TH2: Relay B off");
+      }
+    } 
+    if(digitalRead(D3) == 0 && dht.getHumidity() < 30){
+      //Neu da keo xong rem
+      if(STT_SW1 == 1 && STT_SW3 == 1){
+        Serial.println("TH3: Relay A on");
+        Serial.println("TH3: Relay B off");
+      }
+    }
     
     String webPage;
     StaticJsonBuffer<500> jsonBuffer;
@@ -187,7 +255,7 @@ void loop()
           }
      }
     //Automation Khay A
-    Serial.println(trangthai);
+//    Serial.println(trangthai);
     //Rau Cai
     if(trangthai == 10){
         if(dht.getHumidity() < 80 && DATA_DA1 < 836){
