@@ -11,9 +11,9 @@ app.set("views","./views");
 var server = require("http").Server(app);
 var io = require("socket.io")(server);
 var ip = require('ip');
-const PORT = 3000;
-server.listen(PORT);
-console.log("Server nodejs chay tai dia chi: " + ip.address() + ":" + PORT);
+// const PORT = 3000;
+server.listen(process.env.PORT || 5000);
+console.log("Server nodejs chay tai dia chi: " + ip.address() + ":");
 require('events').EventEmitter.prototype._maxListeners = 0;
 
 //Khi có mệt kết nối được tạo giữa Socket Client và Socket Server
