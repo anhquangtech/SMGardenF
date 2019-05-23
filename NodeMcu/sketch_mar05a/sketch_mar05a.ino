@@ -15,12 +15,18 @@ DHTesp dht;
 #define SW2_PIN 14
 #define SW3_PIN 12    //switch hanh trinh
 
+// 23/5/2019
+#define DC_A_PIN 13
+#define DC_B_PIN 15   // chân điều khiển đóng mở rèm.
+#define DC2_PIN 10    // chân điều khiển bơm 2
+#define DC1_PIN 9      // chân điều khiển bơm 1
+
 //#define SD2 9
 SocketIOClient client;
-const char* ssid = "Daq";          //Tên mạng Wifi mà Socket server của bạn đang kết nối
-const char* password = "123456789";  //Pass mạng wifi ahihi, anh em rãnh thì share pass cho mình với.
+const char* ssid = "DAQ";          //Tên mạng Wifi mà Socket server của bạn đang kết nối
+const char* password = "15069341Anhquang@";  //Pass mạng wifi ahihi, anh em rãnh thì share pass cho mình với.
  
-char host[] = "192.168.1.5";  //Địa chỉ IP dịch vụ, hãy thay đổi nó theo địa chỉ IP Socket server của bạn.
+char host[] = "192.168.1.2";  //Địa chỉ IP dịch vụ, hãy thay đổi nó theo địa chỉ IP Socket server của bạn.
 int port = 3000;                  //Cổng dịch vụ socket server do chúng ta tạo!
  
 //từ khóa extern: dùng để #include các biến toàn cục ở một số thư viện khác. Trong thư viện SocketIOClient có hai biến toàn cục
@@ -45,20 +51,27 @@ void setup()
     pinMode(D3, INPUT); //Connect YL-83
 
     // 29/4/2019
-    pinMode(D7, OUTPUT); //Connect Relay 1
-    pinMode(D8, OUTPUT); //Connetc Relay 2
+//    pinMode(D7, OUTPUT); //Connect Relay 1
+//    pinMode(D8, OUTPUT); //Connetc Relay 2
 
     // 19/5/2019
     pinMode (SW1_PIN,INPUT);
     pinMode (SW2_PIN,INPUT);
     pinMode (SW3_PIN,INPUT);
     pinMode(A0, INPUT);
+
+    // 23/5/2019
+     pinMode (DC_A_PIN, OUTPUT);
+     pinMode (DC_B_PIN, OUTPUT);
+     pinMode (DC1_PIN, OUTPUT);
+     pinMode (DC2_PIN, OUTPUT);  
+  
 //    pinMode(SD2, OUTPUT);
     
     // 11/5/2019
     pinMode (DA_vcc1_PIN,OUTPUT);
     pinMode (DA_vcc2_PIN,OUTPUT);
-    
+
     Serial.begin(115200);
     delay(10);
  
@@ -211,7 +224,7 @@ void loop()
           //Khay A
           if(RID == "PumpOn-send-nodemcu-data"){
                  Serial.println("Pump On");
-                 digitalWrite(D7,HIGH);
+                 digitalWrite(DC1_PIN,HIGH);
 //                 digitalWrite(SD2,HIGH);
 //                 delay(2000);
 //                 digitalWrite(SD2,LOW);
@@ -219,17 +232,17 @@ void loop()
 
           if(RID == "PumpOff-send-nodemcu-data"){
                  Serial.println("Pump Off");
-                 digitalWrite(D7,LOW);
+                 digitalWrite(DC1_PIN,LOW);
           }
           //Khay B
           if(RID == "PumpOnB-send-nodemcu-data"){
                  Serial.println("Pump On B");
-                 digitalWrite(D8,HIGH);
+                 digitalWrite(DC2_PIN,HIGH);
           }
 
           if(RID == "PumpOffB-send-nodemcu-data"){
                  Serial.println("Pump Off B");
-                 digitalWrite(D8,LOW);
+                 digitalWrite(DC2_PIN,LOW);
           }
           
           //Server => NodeMcu: Vegetable
@@ -260,26 +273,26 @@ void loop()
     if(trangthai == 10){
         if(dht.getHumidity() < 80 && DATA_DA1 < 836){
           Serial.println("Tuoi nuoc rau cai");
-          digitalWrite(D7,HIGH);
+          digitalWrite(DC1_PIN,HIGH);
           delay(5000);
-          digitalWrite(D7,LOW);
+          digitalWrite(DC1_PIN,LOW);
         }
         else{
           Serial.println("Khong tuoi nuoc rau cai");
-          digitalWrite(D7,LOW);
+          digitalWrite(DC1_PIN,LOW);
         }
     }
     //Rau Mam
     if(trangthai == 11){
         if(dht.getHumidity() < 100 && DATA_DA1 < 866){
           Serial.println("Tuoi nuoc rau mam");
-          digitalWrite(D7,HIGH);
+          digitalWrite(DC1_PIN,HIGH);
           delay(5000);
-          digitalWrite(D7,LOW);
+          digitalWrite(DC1_PIN,LOW);
         }
         else{
           Serial.println("Khong tuoi nuoc rau mam");
-          digitalWrite(D7,LOW);
+          digitalWrite(DC1_PIN,LOW);
         }
     }
 
@@ -288,26 +301,26 @@ void loop()
     if(trangthaiB == 12){
         if(dht.getHumidity() < 80 && DATA_DA2 < 836){
           Serial.println("Tuoi nuoc rau cai");
-          digitalWrite(D8,HIGH);
+          digitalWrite(DC2_PIN,HIGH);
           delay(5000);
-          digitalWrite(D8,LOW);
+          digitalWrite(DC2_PIN,LOW);
         }
         else{
           Serial.println("Khong tuoi nuoc rau cai");
-          digitalWrite(D8,LOW);
+          digitalWrite(DC2_PIN,LOW);
         }
     }
     //Rau Mam
     if(trangthaiB == 13){
         if(dht.getHumidity() < 100 && DATA_DA2 < 866){
           Serial.println("Tuoi nuoc rau mam");
-          digitalWrite(D8,HIGH);
+          digitalWrite(DC2_PIN,HIGH);
           delay(5000);
-          digitalWrite(D8,LOW);
+          digitalWrite(DC2_PIN,LOW);
         }
         else{
           Serial.println("Khong tuoi nuoc rau mam");
-          digitalWrite(D8,LOW);
+          digitalWrite(DC2_PIN,LOW);
         }
     }
 
