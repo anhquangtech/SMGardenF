@@ -75,6 +75,7 @@ socket.on("Server-send-data",function (data){
   //Soil Moisture
   document.getElementById("soil1").innerHTML = data.SoilMoisture1;
   document.getElementById("soil2").innerHTML = data.SoilMoisture2;
+  console.log(data);
 });
 
 //Automation ON/OFF Pump

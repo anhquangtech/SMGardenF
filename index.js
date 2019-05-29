@@ -11,12 +11,12 @@ app.set("views","./views");
 var server = require("http").Server(app);
 var io = require("socket.io")(server);
 var ip = require('ip');
-// const PORT = 3000;
-server.listen(process.env.PORT || 5000);
-console.log("Server nodejs chay tai dia chi: " + ip.address() + ":");
-require('events').EventEmitter.prototype._maxListeners = 0;
-
-//Khi có mệt kết nối được tạo giữa Socket Client và Socket Server
+const PORT = 3000;
+// server.listen(process.env.PORT || 5000);
+// server.listen(PORT);
+server.listen(PORT, ()=> {
+	console.log("Server nodejs chay tai dia chi: " + ip.address() + ":" +PORT);
+	//Khi có mệt kết nối được tạo giữa Socket Client và Socket Server
 io.on('connection', function(socket) {	
 	var led = [true, false] //định nghĩa một mảng 1 chiều có 2 phần tử: true, false. Mảng này sẽ được gửi đi nhằm thay đổi sự sáng tắt của 2 con đèn LED đỏ và xanh. Dựa vào cài đặt ở Arduino mà đèn LEd sẽ bị bật hoặc tắt. Hãy thử tăng hoạt giảm số lượng biến của mảng led này xem. Và bạn sẽ hiểu điều kỳ diệu của JSON!
 	//Tạo một chu kỳ nhiệm vụ sẽ chạy lại sau mỗi 200ms
@@ -93,6 +93,9 @@ io.on('connection', function(socket) {
     //     console.log(data);
     // });
     // socket.emit("Server-send-data",{ hello: 'world' });
+	});
 });
 
-module.exports = app;
+require('events').EventEmitter.prototype._maxListeners = 0;
+
+// module.exports = app;
